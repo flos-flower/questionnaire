@@ -563,6 +563,7 @@ let testResults = (saveRes: boolean, radioBtns?: NodeListOf<HTMLInputElement>): 
         let answersChange = JSON.parse(localStorage.getItem("answers")!);
         answersChange[testChosen.test] = [];
         localStorage.setItem("answers", JSON.stringify(answersChange));
+        storedAnswers = JSON.parse(localStorage.getItem("answers")!);
     })
 }
 
