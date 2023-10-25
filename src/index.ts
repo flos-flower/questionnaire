@@ -88,12 +88,9 @@ let tests: Test[] = [
                     question: 'Question 5',
                     correctAnswer: 'Answer 6',
                     answers: [
-                        'Answer 1',
-                        'Answer 2',
-                        'Answer 3',
-                        'Answer 4',
-                        'Answer 5',
-                        'Answer 6',
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin odio sit amet.',
+                        'Lorem ipsum dolor sit amet, aliquam sollicitudin odio sit amet.',
                     ],
                 },
             ]
@@ -292,12 +289,9 @@ let tests: Test[] = [
                     question: 'Question 5',
                     correctAnswer: 'Answer 6',
                     answers: [
-                        'Answer 1',
-                        'Answer 2',
-                        'Answer 3',
-                        'Answer 4',
-                        'Answer 5',
-                        'Answer 6',
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin odio sit amet.',
+                        'Lorem ipsum dolor sit amet, aliquam sollicitudin odio sit amet.',
                     ],
                 },
             ],
@@ -565,6 +559,11 @@ let testResults = (saveRes: boolean, radioBtns?: NodeListOf<HTMLInputElement>): 
     </div>
     `
     startTest('.test-results-footer__retry');
+    document.querySelector('.test-results-footer__retry')?.addEventListener('click', ():void => {
+        let answersChange = JSON.parse(localStorage.getItem("answers")!);
+        answersChange[testChosen.test] = [];
+        localStorage.setItem("answers", JSON.stringify(answersChange));
+    })
 }
 
 testItem.forEach((el, index) => {

@@ -98,10 +98,14 @@
     }
     &__answers {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
-        padding:1rem 2.5rem;
+        padding:1rem 2.5rem 0.2rem 2.5rem;
         background-color:#EFEFEF;
         border-radius:3px;
+    }
+    &__answer {
+        margin-bottom: 0.8rem;
     }
 }
 
