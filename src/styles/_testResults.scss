@@ -1,0 +1,129 @@
+@use "config" as cfg;
+
+.test-results-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.test-results-header {
+    display: flex;
+    align-items:center;
+    height: 3rem;
+    padding:0 1rem;
+    width: 100%;
+    border-bottom: 2px solid #cfd8dc;
+    color: #8D8D8D;
+    font-family: Nunito;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    &__text {
+        color: #263238;
+        font-family: Nunito;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 0 auto;
+    }
+    &__exit {
+        cursor:pointer;
+    }
+}
+
+.test-results-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &__text {
+        color: #263238;
+        text-align: center;
+        font-family: Nunito;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 48px;
+    }
+    &__result {
+        color: #8D8D8D;
+        text-align: center;
+        font-family: Nunito;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+    }
+}
+
+.test-results-main {
+    padding: 1rem;
+    flex-grow: 2;
+    &__text {
+        color: #8D8D8D;
+        font-family: Nunito;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+    }
+}
+
+.test-results-answer {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height:6.5rem;
+    border-bottom:1px dashed #E0E0E0;
+    padding: 1rem 0;
+    color: #263238;
+    font-family: Nunito;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    &__question {
+        color: #263238;
+        font-family: Nunito;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    &__res {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height:2.5rem;
+        padding:0 1rem;
+    }
+}
+
+.test-results-footer {
+    display: flex;
+    align-items:center;
+    justify-content: flex-start;
+    padding:0 1rem;
+    width: 100%;
+    border-top: 2px solid #cfd8dc;
+    height:3rem;
+    &__retry {
+        padding:0.35rem 1rem;
+        cursor:pointer;
+        border-radius: 3px;
+        border:1px solid cfg.$secondary-color;
+        background-color:white;
+        color:cfg.$secondary-color;
+        font-family: Nunito;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        &:hover {
+            background-color:cfg.$secondary-color;
+            color:white;
+            transition: 0.5s;
+        }
+    }
+}

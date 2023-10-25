@@ -1,0 +1,19 @@
+@use "mixins" as m;
+
+.init-main-page {
+  flex-grow: 2;
+  @include m.center-element;
+  height: 100vh;
+  @include m.disable-selection;
+}
+
+.init-page {
+  p {
+    color: #34515e;
+    font-family: Nunito;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

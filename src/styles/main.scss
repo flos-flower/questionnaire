@@ -1,0 +1,127 @@
+@use "config" as cfg;
+@use "initPage";
+@use "mixins" as m;
+@use "descPage";
+@use "testStart";
+@use "testResults";
+
+body {
+  background: cfg.$primary-color;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: stretch;
+}
+
+header {
+  display: flex;
+  width: fit-content;
+}
+
+.menu {
+  height: 100vh;
+  width: 3rem;
+  background-color: #eceff1;
+  display: flex;
+  flex-direction: column;
+  @include m.transition-ease;
+  &.open {
+    width: 13rem;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.header {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 1rem;
+  border-bottom: 2px solid #cfd8dc;
+  margin-bottom: 1rem;
+  &__burger {
+    @include m.center-element;
+    svg {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  &__text {
+    @include m.disable-selection;
+    @include m.transition-ease;
+    display: none;
+    color: #34515e;
+    font-family: Nunito;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    margin-left: 2.9rem;
+    animation: fadeIn 0.7s;
+    &.visible {
+      display: inline-block;
+    }
+  }
+}
+
+.tests {
+  width: 100%;
+  padding: 0 0.5rem;
+  &__item {
+    @include m.disable-selection;
+    white-space: nowrap;
+    display: none;
+    animation: fadeIn 0.5s;
+    width: 100%;
+    margin-bottom: 0.4rem;
+    padding: 0.1rem 0 0.1rem 0.5rem;
+    border-radius: 0.2rem;
+    &.visible {
+      display: block;
+    }
+    color: #263238;
+    font-family: Nunito;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    &_chosen {
+      background-color: cfg.$secondary-color;
+      cursor: pointer;
+      color: #fff;
+    }
+    &:hover {
+      background-color: cfg.$secondary-color;
+      cursor: pointer;
+      color: #fff;
+    }
+  }
+}
+
+input[type='radio'] {
+  accent-color:white;
+  &:checked:after {
+    width: 11px;
+    height: 11px;
+    border-radius: 15px;
+    top: 0px;
+    left: 0px;
+    position: relative;
+    background-color: #FF6659;;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid cfg.$secondary-color;
+  }
+}
